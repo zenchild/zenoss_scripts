@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+import Globals
+from Products.ZenUtils.ZenScriptBase import ZenScriptBase
+from transaction import commit
+
+dmd = ZenScriptBase(connect=True).dmd
+devices = dmd.Devices
+
 templContainer = devices.Server.Windows.WMI.MSSQLServer.rrdTemplates
 base_template = templContainer.MSSQLServer
 base_name = 'MSSQLServer'
